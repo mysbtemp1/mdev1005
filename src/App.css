@@ -35,7 +35,7 @@ ul.custom-nav
 
 
 #inputs {
-  /* max-width:max-content; */
+  max-width: 510px;
   width: auto;
   height: 80px;
   font-size: 50px;
@@ -55,33 +55,9 @@ ul.custom-nav
   background-color:#F9F9F9;
   border: 1px solid #eae0e0;
 }
-
-#ops {
-  width: 90px;
-  height: 50px;
-  margin: 6px;
-  background-color:#DDDDDD;
-  border: 1px solid #eae0e0;
-  font-size: 22px;
-}
-#equal {
-  height: auto;
-  background-color: #4E90FE;
-  border: 1px solid #eae0e0;
-  color: white;
-  font-size: 22px;
-}
-
-#clear{
-  border: 1px solid #888181b1;
-}
 .buttons{
   width: auto;
   margin: 15px;
-  
-}
-.ops {
-  display: flex;
   
 }
 .keypadj {
@@ -97,4 +73,14 @@ ul.custom-nav
 
   margin: 0px;
   padding: 0px;
+}
+#equal {
+  height: auto;
+  background-color: #4E90FE;
+  border: 1px solid #eae0e0;
+  color: white;
+  font-size: 22px;
+}
+#clear{
+  border: 1px solid #888181b1;
 }

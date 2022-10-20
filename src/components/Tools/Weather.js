@@ -4,15 +4,7 @@ import {Link} from 'react-router-dom';
 const Weather = () => {
     return (
         <div className='container'>
-            <h1>This is Tools Page</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/tools">Tools</Link>
-                    </li>
-                </ul>
-            </nav>
-            <h1>This is Weather</h1>
+            <h1 className='ml-3 mt-3'>This is Weather</h1>
         </div>
     );
 };

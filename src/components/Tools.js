@@ -4,7 +4,7 @@ import {Route, Link, Routes} from 'react-router-dom';
 const Tools = () => {
     return (
         <div className='container'>
-            <h1>This is Tools Page</h1>
+            <h1 className='ml-3 mt-3'>This is Tools Page</h1>
             <nav>
                 <ul>
                     <li>

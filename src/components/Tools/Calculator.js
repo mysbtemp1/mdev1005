@@ -27,33 +27,25 @@ const Calculator = () => {
     
     return (
         <div className='container'>
-            <h1>This is Tools Page</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/tools">Tools</Link>
-                    </li>
-                </ul>
-            </nav>
-            <h1>This is Calculator</h1>
-            <div className="input">
+            <h1 className='ml-3 mt-3'>Calculator</h1>
+            <div>
                 <div type="text" id="inputs"></div>
             </div>
             <div className="buttons">
-                <div className="ops">
-                    <button className="button" value='+' onClick={(event) => calc(event)}>+</button>
-                    <button className="button" value='-' onClick={(event) => calc(event)}>-</button>
-                    <button className="button" value='*' onClick={(event) => calc(event)}>*</button>
-                    <button className="button" value='/' onClick={(event) => calc(event)}>/</button>
-                </div>
                 <div className="keypadj">
+                    <div className="keypadi">
+                        <button className="button" value='+' onClick={(event) => calc(event)}>+</button>
+                        <button className="button" value='-' onClick={(event) => calc(event)}>-</button>
+                        <button className="button" value='*' onClick={(event) => calc(event)}>*</button>
+                        <button className="button" value='/' onClick={(event) => calc(event)}>/</button>
+                    </div>
+
                     <div className="keypadi">
                         <button className="button" value='7' onClick={(event) => calc(event)}>7</button>
                         <button className="button" value='4' onClick={(event) => calc(event)}>4</button>
                         <button className="button" value='1' onClick={(event) => calc(event)}>1</button>
                         <button className="button" value='0' onClick={(event) => calc(event)}>0</button>
                     </div>
-
 
                     <div className="keypadi">
                         <button className="button" value='8' onClick={(event) => calc(event)}>8</button>
@@ -66,9 +58,8 @@ const Calculator = () => {
                         <button className="button" value='9' onClick={(event) => calc(event)}>9</button>
                         <button className="button" value='6' onClick={(event) => calc(event)}>6</button>
                         <button className="button" value='3' onClick={(event) => calc(event)}>3</button>
-                        <button className="button" value='C' onClick={(event) => calc(event)}>C</button>
+                        <button className="button" value='C' onClick={(event) => calc(event)} id="clear">C</button>
                     </div>
-
 
                     <div className="keypadi">
                         <button id="equal" className="button" value='=' onClick={(event) => calc(event)}>=</button>
