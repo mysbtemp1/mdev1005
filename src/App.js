@@ -1,38 +1,43 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import './App.css';
+import {BrowserRouter as Router, Route, NavLink, Routes} from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Tools from './components/Tools';
 import Services from './components/Services';
-import './App.css';
+import Calculator from './components/Tools/Calculator';
+import Weather from './components/Tools/Weather';
 
 function App() {
+
   return (
     <Router>
       <div>
         <nav>
-          <ul>
+          <ul className='navbar'>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink exact to="/home">Home</NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <Link to="/tools">Tools</Link>
+              <NavLink to="/tools">Tools</NavLink>
             </li>
             <li>
-              <Link to="services">Services</Link>
+              <NavLink to="/services">Services</NavLink>
             </li>
           </ul>
         </nav>
+        
 
-        {/* 👇️ Wrap your Route components in a Routes component */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/tools/calculator" element={<Calculator />} />
+          <Route path="/tools/weather" element={<Weather />} />
         </Routes>
       </div>
     </Router>
