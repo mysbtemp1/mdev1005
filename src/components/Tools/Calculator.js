@@ -27,7 +27,7 @@ const Calculator = () => {
     
     return (
         <div className='container'>
-            <h1 className='ml-3 mt-3'>Calculator</h1>
+            <h1 className='ml-3 mt-3'>Calculator Application</h1>
             <div>
                 <div type="text" id="inputs"></div>
             </div>
