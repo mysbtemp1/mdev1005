@@ -1,33 +1,31 @@
-ul.navbar 
+ul.custom-nav 
 {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  border: 1px solid #e7e7e7;
-  background-color: #f3f3f3;
+  width: 100%;
 }
 
-.navbar li 
+.custom-nav li 
 {
+  display: inline;
   float: left;
 }
 
-.navbar li a 
+.custom-nav li a 
 {
+  text-decoration: none;
   display: block;
   color: #666;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  padding: 20px 25px;
 }
 
-.navbar li a:hover:not(.active) 
+.custom-nav li a:hover:not(.active) 
 {
   background-color: #ddd;
 }
 
-.navbar li a.active 
+.custom-nav li a.active 
 {
   color: white;
   background-color: #04AA6D;

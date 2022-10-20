@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const Weather = () => {
     return (
-        <div>
+        <div className='container'>
             <h1>This is Tools Page</h1>
             <nav>
                 <ul>
