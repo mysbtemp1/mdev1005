@@ -1,15 +1,16 @@
 import React from 'react';
 import Header from './Theme';
 import { Footer } from './Theme';
-import {Route, Link, Routes} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Tools = () => {
+
     return (
         
         <div>
             <Header headingText='Tools' />
             
-            <div className="w3-row-padding w3-padding-64 w3-padding-bottom-0 w3-container">
+            <div className='w3-row-padding w3-padding-64 w3-container w3-padding-bottom-0'>
                 <div className="w3-content">
                     <div className="w3-twothird">
                         <ul>
