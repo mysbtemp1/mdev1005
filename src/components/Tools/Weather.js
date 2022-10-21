@@ -27,6 +27,8 @@ const Weather = () => {
             setData(new_data);
         });
 
+        GetWeatherData('current', lat, long);
+
     }, [lat,long]);
 
     async function GetWeatherData(area, lat = null, long = null)
@@ -57,41 +59,43 @@ const Weather = () => {
     }
 
     return (
-        <div className='container'>
-            <div className='ml-3 mt-3 pb-3'>
-                <h1>Weather Application</h1>
-                <a href="#" onClick={ () => GetWeatherData('current', lat, long) }>My Location</a>
-                <br/>
-                <input id="search" onKeyUp={ () => GetWeatherData(null) } />
-            </div>
+        <div className="w3-row-padding w3-padding-64 w3-container">
+            <div className="w3-content">
+                <div className="w3-twothird">
+                    <h1>Weather Application</h1>
+                    <a href="#" onClick={ () => GetWeatherData('current', lat, long) }>My Location</a>
+                    <br/>
+                    <input id="search" onKeyUp={ () => GetWeatherData(null) } />
 
-            <div className="main ml-3">
+                    <div className="main">
 
-                {data.cod == 200 ?
-                    (
-                        <div>
-                            <div className="top">
-                                <p className="header">{data.name}</p>
-                            </div>
-                            <div className="flex">
-                                <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
-                                <p className="description">{data.weather[0].main}</p>
-                            </div>
-                
-                            <div className="flex">
-                                <p className="temp">Temprature: {data.main.temp} &deg;C</p>
-                                <p className="temp">Humidity: {data.main.humidity} %</p>
-                            </div>
-                
-                            <div className="flex">
-                                <p className="sunrise-sunset">Sunrise: {new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
-                                <p className="sunrise-sunset">Sunset: {new Date(data.sys.sunset * 1000).toLocaleTimeString('en-IN')}</p>
-                            </div>
-                        </div>
-                    ) :
-                    ( <div className="px-3">{data.message}</div>)
-                }
-                
+                        {data.cod == 200 ?
+                            (
+                                <div>
+                                    <div className="top">
+                                        <p className="header">{data.name}</p>
+                                    </div>
+                                    <div className="flex">
+                                        <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
+                                        <p className="description">{data.weather[0].main}</p>
+                                    </div>
+                        
+                                    <div className="flex">
+                                        <p className="temp">Temprature: {data.main.temp} &deg;C</p>
+                                        <p className="temp">Humidity: {data.main.humidity} %</p>
+                                    </div>
+                        
+                                    <div className="flex">
+                                        <p className="sunrise-sunset">Sunrise: {new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+                                        <p className="sunrise-sunset">Sunset: {new Date(data.sys.sunset * 1000).toLocaleTimeString('en-IN')}</p>
+                                    </div>
+                                </div>
+                            ) :
+                            ( <div>{data.message}</div>)
+                        }
+                        
+                    </div>
+                </div>
             </div>
         </div>
     );

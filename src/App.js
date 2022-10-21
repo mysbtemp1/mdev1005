@@ -8,29 +8,35 @@ import Services from './components/Services';
 import Calculator from './components/Tools/Calculator';
 import Weather from './components/Tools/Weather';
 
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
 function App() {
 
   return (
     <Router>
-      <div>
-        <nav className="navbar bg-light p-0">
-          <div className='container'>
-            <ul className='custom-nav'>
-              <li>
-                <NavLink to="/home">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/about">About</NavLink>
-              </li>
-              <li>
-                <NavLink to="/tools">Tools</NavLink>
-              </li>
-              <li>
-                <NavLink to="/services">Services</NavLink>
-              </li>
-            </ul>
-          </div>
-        </nav>
+
+      <div className="w3-top">
+        <div className="w3-bar w3-red w3-card w3-left-align w3-large">
+          <NavLink className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w-red" title="Toggle Navigation Menu" onClick={ () => myFunction()}><i className="fa fa-bars"></i></NavLink>
+          <NavLink to="/home" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive && 'w3-white'}`}>Home</NavLink>
+          <NavLink to="/about" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive && 'w3-white'}`}>About</NavLink>
+          <NavLink to="/tools" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive && 'w3-white'}`}>Tools</NavLink>
+          <NavLink to="/services" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive && 'w3-white'}`}>Services</NavLink>
+        </div>
+      
+        <div id="navDemo" className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+          <NavLink to="/home" className="w3-bar-item w3-button w3-padding-large">Link 1</NavLink>
+          <NavLink to="/about" className="w3-bar-item w3-button w3-padding-large">Link 2</NavLink>
+          <NavLink to="/tools" className="w3-bar-item w3-button w3-padding-large">Link 3</NavLink>
+          <NavLink to="/services" className="w3-bar-item w3-button w3-padding-large">Link 4</NavLink>
+        </div>
         
 
         <Routes>

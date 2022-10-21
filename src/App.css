@@ -85,32 +85,26 @@ ul.custom-nav
   border: 1px solid #888181b1;
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
-
 .main{
     width: 700px;
-    border-radius: 20px;
-    background-color: lightgray;
+    margin-top: 25px;
 }
 
 .top{
     height: 60px;
-    background-color: #04AA6D;
+    background-color: lightgray;
     color: black;
     padding: 10px;
-    border-radius: 20px 20px 0 0;
     font-family: 'Recursive', sans-serif;
     display: flex;
     justify-content: space-between;
 }
 
 .header{
-    background-color: #04AA6D;
+    background-color: lightgray;
     color: black;;
     margin: 10px 0px 0px 10px;
     font-size: 25px;
-    border-radius: 20px 20px 0 0;
     font-family: 'Recursive', sans-serif;
 }
 
