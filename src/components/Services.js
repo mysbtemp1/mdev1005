@@ -1,14 +1,12 @@
 import React from 'react';
+import Header, { Footer } from './Theme';
 
 const Services = () => {
     return (
-        
-        <div className="w3-row-padding w3-padding-64 w3-container">
-            <div className="w3-content">
-                <div className="w3-twothird">
-                    <h1>This is Services Page</h1>
-                </div>
-            </div>
+        <div>
+            <Header headingText='Services' />
+
+            <Footer />
         </div>
     );
 };
