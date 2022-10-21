@@ -34,6 +34,7 @@ const Weather = () => {
     async function GetWeatherData(area, lat = null, long = null)
     {
         let url = '';
+        let app_id = '903507f17d707fecd352d38301efba77';
 
         if (!runTyping)
         {
@@ -41,9 +42,9 @@ const Weather = () => {
                 typing = 0;
         
                 if (area == 'current')
-                    url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&APPID=903507f17d707fecd352d38301efba77`;
+                    url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&APPID=${app_id}`;
                 else
-                    url = `https://api.openweathermap.org/data/2.5/weather?q=${document.getElementById("search").value}&units=metric&APPID=903507f17d707fecd352d38301efba77`;
+                    url = `https://api.openweathermap.org/data/2.5/weather?q=${document.getElementById("search").value}&units=metric&APPID=${app_id}`;
             
                 await fetch(url)
                 .then(function(response){
