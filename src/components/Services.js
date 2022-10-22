@@ -13,28 +13,28 @@ const Services = () => {
                         <h1>References</h1>
                         <ul>
                             <li>
-                                <Link to="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_start_page">https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_start_page</Link>
+                                <a href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_start_page" target={'_blank'}>https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_start_page</a>
                             </li>
                             <li>
-                                <Link to="https://v5.reactrouter.com/web/guides/quick-start">https://v5.reactrouter.com/web/guides/quick-start</Link>
+                                <a href="https://v5.reactrouter.com/web/guides/quick-start" target={'_blank'}>https://v5.reactrouter.com/web/guides/quick-start</a>
                             </li>
                             <li>
-                                <Link to="https://medium.com/@ipenywis/intro-to-react-router-for-beginners-multiple-page-apps-461f4729bd3f">https://medium.com/@ipenywis/intro-to-react-router-for-beginners-multiple-page-apps-461f4729bd3f</Link>
+                                <a href="https://medium.com/@ipenywis/intro-to-react-router-for-beginners-multiple-page-apps-461f4729bd3f" target={'_blank'}>https://medium.com/@ipenywis/intro-to-react-router-for-beginners-multiple-page-apps-461f4729bd3f</a>
                             </li>
                             <li>
-                                <Link to="https://www.geeksforgeeks.org/how-to-create-a-multi-page-website-using-react-js/">https://www.geeksforgeeks.org/how-to-create-a-multi-page-website-using-react-js/</Link>
+                                <a href="https://www.geeksforgeeks.org/how-to-create-a-multi-page-website-using-react-js/" target={'_blank'}>https://www.geeksforgeeks.org/how-to-create-a-multi-page-website-using-react-js/</a>
                             </li>
                             <li>
-                                <Link to="https://api.openweathermap.org/data/2.5/weather?q=vadodara&APPID=903507f17d707fecd352d38301efba77">https://api.openweathermap.org/data/2.5/weather?q=vadodara&APPID=903507f17d707fecd352d38301efba77</Link>
+                                <a href="https://api.openweathermap.org/data/2.5/weather?q=vadodara&APPID=903507f17d707fecd352d38301efba77" target={'_blank'}>https://api.openweathermap.org/data/2.5/weather?q=vadodara&APPID=903507f17d707fecd352d38301efba77</a>
                             </li>
                             <li>
-                                <Link to="https://www.freecodecamp.org/news/learn-react-by-building-a-weather-app/">https://www.freecodecamp.org/news/learn-react-by-building-a-weather-app/</Link>
+                                <a href="https://www.freecodecamp.org/news/learn-react-by-building-a-weather-app/" target={'_blank'}>https://www.freecodecamp.org/news/learn-react-by-building-a-weather-app/</a>
                             </li>
                             <li>
-                                <Link to="https://stackoverflow.com/questions/63124161/attempted-import-error-switch-is-not-exported-from-react-router-dom">https://stackoverflow.com/questions/63124161/attempted-import-error-switch-is-not-exported-from-react-router-dom</Link>
+                                <a href="https://stackoverflow.com/questions/63124161/attempted-import-error-switch-is-not-exported-from-react-router-dom" target={'_blank'}>https://stackoverflow.com/questions/63124161/attempted-import-error-switch-is-not-exported-from-react-router-dom</a>
                             </li>
                             <li>
-                                <Link to="https://bobbyhadz.com/blog/react-export-switch-imported-as-switch-not-found">https://bobbyhadz.com/blog/react-export-switch-imported-as-switch-not-found</Link>
+                                <a href="https://bobbyhadz.com/blog/react-export-switch-imported-as-switch-not-found" target={'_blank'}>https://bobbyhadz.com/blog/react-export-switch-imported-as-switch-not-found</a>
                             </li>
                         </ul>
                     </div>
