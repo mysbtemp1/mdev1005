@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Theme';
 import { Footer } from './Theme';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Tools = () => {
 
@@ -13,8 +13,8 @@ const Tools = () => {
             <div className='w3-row-padding w3-padding-64 w3-container'>
                 <div className="w3-content">
                     <div className="w3-twothird">
-                        <Link to="/tools/calculator" className='custom-btn'>Calculator</Link>
-                        <Link to="/tools/weather" className='custom-btn ml-10px'>Weather</Link>
+                        <NavLink to="/tools/calculator" className={({isActive}) => `custom-btn ${isActive && 'custom-btn-active'}`}>Calculator</NavLink>
+                        <NavLink to="/tools/weather" className={({isActive}) => `custom-btn ml-10px ${isActive && 'custom-btn-active'}`}>Weather</NavLink>
                     </div>
                 </div>
             </div>

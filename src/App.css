@@ -161,18 +161,16 @@ ul.custom-nav
 {
   margin-left: 10px;
 }
-a.custom-btn {
+a.custom-btn 
+{
   background-color: #f44336;
   color: white;
   padding: 1em 1.5em;
   text-decoration: none;
   text-transform: uppercase;
 }
-
-a.custom-btn:hover {
+a.custom-btn-active,
+a.custom-btn:hover 
+{
   background-color: #555;
-}
-
-a.custom-btn:active {
-  background-color: black;
 }
