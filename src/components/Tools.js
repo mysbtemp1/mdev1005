@@ -10,17 +10,11 @@ const Tools = () => {
         <div>
             <Header headingText='Tools' />
             
-            <div className='w3-row-padding w3-padding-64 w3-container w3-padding-bottom-0'>
+            <div className='w3-row-padding w3-padding-64 w3-container'>
                 <div className="w3-content">
                     <div className="w3-twothird">
-                        <ul>
-                            <li>
-                                <Link to="/tools/calculator">Calculator</Link>
-                            </li>
-                            <li>
-                                <Link to="/tools/weather">Weather</Link>
-                            </li>
-                        </ul>
+                        <Link to="/tools/calculator" className='custom-btn'>Calculator</Link>
+                        <Link to="/tools/weather" className='custom-btn ml-10px'>Weather</Link>
                     </div>
                 </div>
             </div>
