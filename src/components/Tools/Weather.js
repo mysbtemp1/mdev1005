@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Tools from '../Tools';
 import { Footer } from '../Theme';
 import moment from 'moment';
@@ -8,6 +8,8 @@ const Weather = () => {
     const [lat, setLat] = useState([]);
     const [long, setLong] = useState([]);
     const [data, setData] = useState([]);
+    const inputRef = useRef([]);
+
     let runTyping, typing = 0;
 
     useEffect(() => {
@@ -46,7 +48,7 @@ const Weather = () => {
                 if (area == 'current')
                     url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&APPID=${app_id}`;
                 else
-                    url = `https://api.openweathermap.org/data/2.5/weather?q=${document.getElementById("search").value}&units=metric&APPID=${app_id}`;
+                    url = `https://api.openweathermap.org/data/2.5/weather?q=${inputRef.current.value}&units=metric&APPID=${app_id}`;
             
                 await fetch(url)
                 .then(function(response){
@@ -72,7 +74,7 @@ const Weather = () => {
                         <h1>Weather</h1>
                         <a href="#" onClick={ () => GetWeatherData('current', lat, long) }>My Location</a>
                         <br/>
-                        <input id="search" onKeyUp={ () => GetWeatherData(null) } title="city" placeholder="Enter city ..." />
+                        <input ref={inputRef} onKeyUp={ () => GetWeatherData(null) } title="city" placeholder="Enter city ..." />
 
                         <div className="main">
 
