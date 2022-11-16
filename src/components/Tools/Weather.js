@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import Tools from '../Tools';
 import { Footer } from '../Theme';
 import moment from 'moment';
+import Tools from "../Tools";
 
 const Weather = () => {
 
