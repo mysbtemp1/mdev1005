@@ -53,22 +53,56 @@ function App() {
         </div>
 
         <Routes>
-          <Route path="/" element={<Navigate replace to="/home" />} />,
+          <Route path="/" element={ <Navigate replace to="/home" /> } />
           <Route path="/home" element={<Home />} />
-          {[ 1 == 2 && LoggedInRoutes ]}
+          <Route path="/about" 
+            element={
+              <RequireAuth>
+                <About />
+              </RequireAuth>
+            } 
+          />
+          <Route path="/tools" 
+            element={
+              <RequireAuth>
+                <Tools />
+              </RequireAuth>
+            } 
+          />
+          <Route path="/services" 
+            element={
+              <RequireAuth>
+                <Services />
+              </RequireAuth>
+            } 
+          />
+          <Route path="/tools/calculator" 
+            element={
+              <RequireAuth>
+                <Calculator />
+              </RequireAuth>
+            } 
+          />
+          <Route path="/tools/weather" 
+            element={
+              <RequireAuth>
+                <Weather />
+              </RequireAuth>
+            } 
+          />
         </Routes>
       </div>
     </Router>
   );
 }
 
-const LoggedInRoutes = [
-  <Route path="/about" element={<About />} />,
-  <Route path="/tools" element={<Tools />} />,
-  <Route path="/services" element={<Services />} />,
-  <Route path="/tools/calculator" element={<Calculator />} />,
-  <Route path="/tools/weather" element={<Weather />} />
-];
+function RequireAuth({ children }) {
+  // const { authed } = useAuth();
+
+  return 1 === 1 ? children : <Navigate to="/login" replace />;
+}
+
+const LoggedInRoutes = <Navigate replace to="/login" />;
 
 const LoggedInLinks = [
   <NavLink to="/about" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>About</NavLink>,
