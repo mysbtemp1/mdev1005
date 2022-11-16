@@ -12,31 +12,23 @@ const About = () => {
                         <div className="card-content">
 
                             <div className="info-headings">
-                                <h4 className="text-uppercase">Darshita Patel</h4>
-                                <h6 className="text-capitalize">Mobile Application Developer</h6>
+                                <h4 className="text-uppercase">Sachin Bhoi</h4>
+                                <h6 className="text-capitalize">FrontEnd Developer</h6>
                             </div>
 
                             <div className="infos">
                                 <ul className="profile-list">
                                     <li className="clearfix">
                                         <span className="title"><i className="fa fa-envelope" style={{color:"#f44336"}}></i></span>
-                                        <span className="content ml-10px"><a href="#">d154patel@gmail.com</a></span>
-                                    </li>
-                                    <li className="clearfix">
-                                        <span className="title"><i className="fa fa-globe" style={{color:"#f44336"}}></i></span>
-                                        <span className="content ml-10px">www.darshita.tech</span>
-                                    </li>
-                                    <li className="clearfix">
-                                        <span className="title"><i className="fa fa-linkedin" style={{color:"#f44336"}}></i></span>
-                                        <span className="content ml-10px"><a href="#">darshita-patel-89b06b1a9</a></span>
+                                        <span className="content ml-10px"><a href="#">givesachin@gmail.com</a></span>
                                     </li>
                                     <li className="clearfix">
                                         <span className="title"><i className="fa fa-phone" style={{color:"#f44336"}}></i></span>
-                                        <span className="content ml-10px">+1(249) 989 2982</span>
+                                        <span className="content ml-10px">+918140996031</span>
                                     </li>
                                     <li className="clearfix">
                                         <span className="title"><i className="fa fa-map" style={{color:"#f44336"}}></i></span>
-                                        <span className="content ml-10px">368, Dunsmore Ln, Barrie L4M 7B1</span>
+                                        <span className="content ml-10px">9, Amar Apartment, Vadodara</span>
                                     </li>
 
                                 </ul>
@@ -60,41 +52,19 @@ const About = () => {
                         <div id="timeline-education">
                 
                             <div className="timeline-block">
-                           
-                                <div className="card timeline-content">
-                                    <div className="card-content">
-                                       
-                                        <h5 className="timeline-title">Preparatory Education</h5>
-                                        
-                                        <div>
-                                            <h6>Shri J.S.Mehta School,Dhansura,India</h6>
-                                            <h6>Jan 2003 - Mar 2006</h6>
-                                        </div>
-                                        
-                                        <p>
-                                            I completed my preparatory education from this Government School.
-                                            I successful completed all the credits without any fallout and got A+ grade overall.
-                                        </p>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <div className="timeline-block">
                                
                                 <div className="card timeline-content">
                                     <div className="card-content">
                                         
-                                        <h5 className="timeline-title">High School</h5>
+                                        <h5 className="timeline-title">School</h5>
                                         
                                         <div className="timeline-info">
-                                            <h6>R.S.V.G.Patel School, India</h6>
-                                            <h6>Aug 2006 - Mar 2016</h6>
+                                            <h6>V M Shah School, Halol, Gujarat, India</h6>
+                                            <h6>till 2012</h6>
                                         </div>
                                         
                                         <p>
-                                            I completed my high school degree from this prestigious institution.
-                                            I successful completed all the credits without any fallout and got A grade overall.
+                                            I completed my school & high school from this institution.
                                         </p>
                                     </div>
                                 </div>
@@ -106,16 +76,15 @@ const About = () => {
                                 <div className="card timeline-content">
                                     <div className="card-content">
                                         
-                                        <h5 className="timeline-title">Computer Science &amp; Engineering</h5>
+                                        <h5 className="timeline-title">Computer Engineering</h5>
                                         
                                         <div className="timeline-info">
-                                            <h6>Parul University</h6>
-                                            <h6>Aug 2016 - May 2020</h6>
+                                            <h6>Vadodara Institute of Engineering</h6>
+                                            <h6>2012 - 2016</h6>
                                         </div>
                                         
                                         <p>
-                                            I completed my computer science degree from this prestigious institution.
-                                            I successful completed all the credits without any fallout and got A grade overall.
+                                            I completed my computer engineering degree from this institution.
                                         </p>
                 
                                     </div>
@@ -128,16 +97,35 @@ const About = () => {
                                 <div className="card timeline-content">
                                     <div className="card-content">
                                         
-                                        <h5 className="timeline-title">Georgian College</h5>
+                                        <h5 className="timeline-title">Bhasker Enterprises</h5>
                                         
                                         <div className="timeline-info">
-                                            <h6>Mobile Application development</h6>
-                                            <h6>May 2022 - Present</h6>
+                                            <h6>Software Developer</h6>
+                                            <h6>Jan 2021 - Oct 2022</h6>
                                         </div>
                                         
                                         <p>
-                                            I recently studing this college.
-                                            I learning new things about the how to built Mobile Application.
+                                            I did my first website development experience from here.
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="timeline-block">
+                                
+                                <div className="card timeline-content">
+                                    <div className="card-content">
+                                        
+                                        <h5 className="timeline-title">Consult Anubhav</h5>
+                                        
+                                        <div className="timeline-info">
+                                            <h6>Software Developer</h6>
+                                            <h6>Nov 2022 - Present</h6>
+                                        </div>
+                                        
+                                        <p>
+                                            I have started upgrading my career here.
                                         </p>
                                         
                                     </div>
