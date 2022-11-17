@@ -101,23 +101,23 @@ function App() {
 }
 
 const LoggedInLinks = [
-  <NavLink to="/about" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>About</NavLink>,
-  <NavLink to="/tools" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>Tools</NavLink>,
-  <NavLink to="/services" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>Services</NavLink>
+  <NavLink key="0" to="/about" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>About</NavLink>,
+  <NavLink key="1" to="/tools" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>Tools</NavLink>,
+  <NavLink key="2" to="/services" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>Services</NavLink>
 ];
 
 const NotLoggedInLinks = [
-  <NavLink to="/login" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>Login</NavLink>
+  <NavLink key="0" to="/login" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>Login</NavLink>
 ];
 
 const LoggedInLinks2 = [
-  <NavLink to="/about" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>About</NavLink>,
-  <NavLink to="/tools" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Tools</NavLink>,
-  <NavLink to="/services" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Services</NavLink>
+  <NavLink key="0" to="/about" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>About</NavLink>,
+  <NavLink key="1" to="/tools" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Tools</NavLink>,
+  <NavLink key="2" to="/services" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Services</NavLink>
 ];
 
 const NotLoggedInLinks2 = [
-  <NavLink to="/login" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Login</NavLink>
+  <NavLink key="0" to="/login" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Login</NavLink>
 ];
 
 
