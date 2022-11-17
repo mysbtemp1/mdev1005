@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import Header, { Footer } from '../Theme';
 
-import AuthState from './AuthState';
+import { login, logout, register } from './AuthState';
 
 const Login = () => {
 
     const [ username, setUsername ] = useState([]);
     const [ password, setPassword ] = useState([]);
 
-    function login() {
-        AuthState.login(username, password);
+    function authLogin() {
+        login(username, password);
     }
 
-    function register() {
-        AuthState.register(username, password);
+    function authRegister() {
+        register(username, password);
     }
 
-    function logout() {
-        AuthState.logout();
+    function authLogout() {
+        logout();
     }
 
     return (
@@ -33,7 +33,7 @@ const Login = () => {
                         <input onKeyUp={ event => setPassword(event.target.value) } title="usernam" placeholder="Enter password ..." />
                         <br />
                         <br />
-                        <a onClick={ () => login() } className='custom-btn custom-btn-active'>Login</a>
+                        <a onClick={ () => authLogin() } className='custom-btn custom-btn-active'>Login</a>
                     </div>
                 </div>
             </div>

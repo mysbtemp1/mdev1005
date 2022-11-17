@@ -10,36 +10,16 @@ import Calculator from './components/tools/Calculator';
 import Weather from './components/tools/Weather';
 import Login from './components/auth/Login';
 
-import AuthState from './components/auth/AuthState';
-
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-function closeNav() {
-  var x = document.getElementById("navDemo");
-  x.className = x.className.replace(" w3-show", "");
-}
+import { getAuthStatus, login, logout, register } from './components/auth/AuthState';
 
 function App() {
-
-  const auth = new AuthState();
   
   function RequireAuth({ children }) {
-    // const { authed } = useAuth();
-
-    return auth.getAuthStatus() ? children : <Navigate to="/login" replace />;
+    return getAuthStatus() ? children : <Navigate to="/login" replace />;
   }
 
   function RequireUnauth({ children }) {
-    // const { authed } = useAuth();
-
-    return !auth.getAuthStatus() ? children : <Navigate to="/home" replace />;
+    return !getAuthStatus() ? children : <Navigate to="/home" replace />;
   }
 
   return (
@@ -49,14 +29,14 @@ function App() {
           <div className="w3-bar w3-red w3-card w3-left-align w3-large">
             <NavLink className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w-red" title="Toggle Navigation Menu" onClick={ () => openNav()}><i className="fa fa-bars"></i></NavLink>
             <NavLink to="/home" className={({isActive}) => `w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white ${isActive ? 'w3-white' : ''}`} onClick={ () => closeNav()}>Home</NavLink>
-            {[ auth.getAuthStatus() && LoggedInLinks ]}
-            {[ !auth.getAuthStatus() && NotLoggedInLinks ]}
+            {[ getAuthStatus() && LoggedInLinks ]}
+            {[ !getAuthStatus() && NotLoggedInLinks ]}
           </div>
         
           <div id="navDemo" className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
             <NavLink to="/home" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Home</NavLink>
-            {[ auth.getAuthStatus() && LoggedInLinks2 ]}
-            {[ !auth.getAuthStatus() && NotLoggedInLinks2 ]}
+            {[ getAuthStatus() && LoggedInLinks2 ]}
+            {[ !getAuthStatus() && NotLoggedInLinks2 ]}
           </div>
         </div>
 
@@ -142,3 +122,17 @@ const NotLoggedInLinks2 = [
 
 
 export default App;
+
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") === -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function closeNav() {
+  var x = document.getElementById("navDemo");
+  x.className = x.className.replace(" w3-show", "");
+}

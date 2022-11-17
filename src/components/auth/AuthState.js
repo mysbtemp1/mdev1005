@@ -1,58 +1,32 @@
-import React from 'react';
 
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase-config';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
-export default class AuthState
-{
-    static instance;
+export async function getAuthStatus() {
+    if (auth.currentUser)
+        return auth.currentUser.hasOwnProperty('email');
+    else
+    return false;
+}
+export async function login(username, password) {
 
-    constructor()
-    {
-        if(AuthState.instance)
-        {
-            return AuthState.instance
-        }
+    signInWithEmailAndPassword(auth, username, password)
+    .then((response) => {
+        console.log(response);
+        sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+    })
+};
 
-        AuthState.instance = this;
+export async function register(username, password) {
 
-        this.username = '';
-        this.auth_status = true;
-    }
+    createUserWithEmailAndPassword(auth, username, password)
+    .then((response) => {
+        console.log(response);
+        sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+    })
+};
 
-     getAuthStatus() {
-        return this.auth_status;
-    }
-
-    async login(username, password) {
-        
-    const authentication = getAuth();
-
-        signInWithEmailAndPassword(authentication, username, password)
-        .then((response) => {
-            console.log(response);
-            this.username = response.user.email;
-            this.auth_status = true;
-          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
-        })
-    }
-
-    async register(username, password) {
-        
-    const authentication = getAuth();
-
-        createUserWithEmailAndPassword(authentication, username, password)
-        .then((response) => {
-            this.username = response.user.email;
-            this.auth_status = true;
-          sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
-        })
-    }
-
-    logout() {
-        sessionStorage.removeItem('Auth Token');
-        this.username = '';
-        this.auth_status = false;
-        this.navigate('/login')
-    }
-
+export async function logout() {
+    sessionStorage.removeItem('Auth Token');
+    this.navigate('/login')
 };
