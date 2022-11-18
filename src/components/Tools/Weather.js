@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Footer } from '../Theme';
+import Header, { Footer, Navbar } from '../Theme';
+import { Container, Card } from 'react-bootstrap';
 import moment from 'moment';
-import Tools from "../Tools";
+import { ToolsDiv } from "../pages/Tools";
 
 const Weather = () => {
 
@@ -66,49 +67,59 @@ const Weather = () => {
     return (
 
         <div>
-            <Tools />
+            <Navbar />
 
-            <div className="w3-row-padding w3-padding-64 w3-container w3-padding-top-20">
-                <div className="w3-content">
-                    <div className="w3-twothird">
-                        <h1>Weather</h1>
-                        <a href="#" onClick={ () => GetWeatherData('current', lat, long) }>My Location</a>
-                        <br/>
-                        <input ref={inputRef} onKeyUp={ () => GetWeatherData(null) } title="city" placeholder="Enter city ..." />
+            <div className='right-container'>
+                <Header headingText='Weather' />
+                
+                <Container className="d-flex justify-content-center">
+                    <ToolsDiv />
+                </Container>
+                
+                <Container className="d-flex justify-content-center"
+                    style={{ minHeight: "450px", paddingBottom: "25px" }}>
+                        
+                    <Card>
+                        <Card.Body>
 
-                        <div className="main">
+                            <a href="#" onClick={ () => GetWeatherData('current', lat, long) }>My Location</a>
+                                
+                            <input ref={inputRef} onKeyUp={ () => GetWeatherData(null) } title="city" placeholder="Enter city ..." />
 
-                            {data.cod == 200 ?
-                                (
-                                    <div>
-                                        <div className="top">
-                                            <p className="header">{data.name}</p>
+                            <div>
+
+                                {data.cod == 200 ?
+                                    (
+                                        <div>
+                                            <div className="top">
+                                                <p className="header">{data.name}</p>
+                                            </div>
+                                            <div>
+                                                <div className="day" style={{display: "inline-block"}}>{moment().format('dddd')}, <span>{moment().format('LL')}</span></div>
+                                                <div className="description" style={{display: "inline-block"}}>{data.weather[0].main}</div>
+                                            </div>
+                                
+                                            <div>
+                                                <p className="temp" style={{display: "inline-block"}}>Temprature: {data.main.temp} &deg;C</p>
+                                                <p className="temp" style={{display: "inline-block"}}>Humidity: {data.main.humidity} %</p>
+                                            </div>
+                                
+                                            <div>
+                                                <p className="sunrise-sunset" style={{display: "inline-block"}}>Sunrise: {new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
+                                                <p className="sunrise-sunset" style={{display: "inline-block"}}>Sunset: {new Date(data.sys.sunset * 1000).toLocaleTimeString('en-IN')}</p>
+                                            </div>
                                         </div>
-                                        <div className="flex">
-                                            <p className="day">{moment().format('dddd')}, <span>{moment().format('LL')}</span></p>
-                                            <p className="description">{data.weather[0].main}</p>
-                                        </div>
-                            
-                                        <div className="flex">
-                                            <p className="temp">Temprature: {data.main.temp} &deg;C</p>
-                                            <p className="temp">Humidity: {data.main.humidity} %</p>
-                                        </div>
-                            
-                                        <div className="flex">
-                                            <p className="sunrise-sunset">Sunrise: {new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
-                                            <p className="sunrise-sunset">Sunset: {new Date(data.sys.sunset * 1000).toLocaleTimeString('en-IN')}</p>
-                                        </div>
-                                    </div>
-                                ) :
-                                ( <div>{data.message ? data.message : 'Please wait ...'}</div>)
-                            }
-                            
-                        </div>
-                    </div>
-                </div>
+                                    ) :
+                                    ( <div>{data.message ? data.message : 'Please wait ...'}</div>)
+                                }
+                                
+                            </div>
+                        </Card.Body>
+                    </Card>
+                </Container>
+
+                <Footer />
             </div>
-
-            <Footer />
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
-import Tools from '../Tools';
-import { Footer } from '../Theme';
+import { ToolsDiv } from '../pages/Tools';
+import { Container, Card } from 'react-bootstrap';
+import Header, { Footer, Navbar } from '../Theme';
 
 function calc(e)
 {
@@ -28,13 +29,21 @@ const Calculator = () => {
     
     return (
 
-        <div>
-            <Tools />
+        <div>  
+            <Navbar />
 
-            <div className="w3-row-padding w3-padding-64 w3-container w3-padding-top-20">
-                <div className="w3-content">
-                    <div className="w3-twothird">
-                        <h1>Calculator</h1>
+            <div className='right-container'>
+                <Header headingText='Calculator' />
+                
+                <Container className="d-flex justify-content-center">
+                    <ToolsDiv />
+                </Container>
+                
+                <Container className="d-flex justify-content-center"
+                    style={{ minHeight: "407px", paddingBottom: "25px" }}>
+
+                    <Card>
+                      <Card.Body>
                         <div>
                             <div type="text" id="inputs"></div>
                         </div>
@@ -73,11 +82,14 @@ const Calculator = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                      </Card.Body>
+                    </Card>
 
-            <Footer />
+                    
+                </Container>
+
+                <Footer />
+            </div>
         </div>
     );
 };
