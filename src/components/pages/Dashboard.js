@@ -1,46 +1,36 @@
-import React, { useState } from "react"
-import { Card, Button, Alert, Container } from "react-bootstrap"
-import { useAuth } from "../../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import React, { useState } from 'react';
+import  Header, { Footer, Navbar }  from '../Theme';
+import News from '../tools/News';
+import Finance from '../tools/Finance';
+import Weather from '../tools/Weather';
 
-export default function Dashboard() {
-  const [error, setError] = useState("")
-  const { currentUser, logout } = useAuth()
-  const history = useHistory()
+const Dashboard = () => {
 
-  async function handleLogout() {
-    setError("")
+    return (
+        
+        <div>
+            <Navbar />
 
-    try {
-      await logout()
-      history.push("/login")
-    } catch {
-      setError("Failed to log out")
-    }
-  }
+            <div className='right-container'>
 
-  return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Card>
-          <Card.Body>
-            <h2 className="text-center mb-4">Profile</h2>
-            {error && <Alert variant="danger">{error}</Alert>}
-            <strong>Email:</strong> {currentUser.email}
-            <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-              Update Profile
-            </Link>
-          </Card.Body>
-        </Card>
-        <div className="w-100 text-center mt-2">
-          <Button variant="link" onClick={handleLogout}>
-            Log Out
-          </Button>
+                <Header headingText='Welcome' />
+
+                <div className="w3-row-padding w3-padding-64 w3-container">
+                    <div className="w3-content mb-5">
+                        <Weather />
+                    </div>
+                    <div className="w3-content mb-5">
+                        <News />
+                    </div>
+                    <div className="w3-content">
+                        <Finance />
+                    </div>
+                </div>
+
+                <Footer />
+            </div>
         </div>
-      </div>
-    </Container>
-  )
-}
+    );
+};
+
+export default Dashboard;

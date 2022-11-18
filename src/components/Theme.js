@@ -79,7 +79,7 @@ const HeaderDiv = styled.header`
     padding: 64px 16px 32px 16px;
 `
 const LoggedInLinks = [
-    <NavLink key="0" to="/home" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" activeClassName='w3-white' onClick={ () => closeNav()}>Home</NavLink>,
+    <NavLink key="0" to="/dashboard" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" activeClassName='w3-white' onClick={ () => closeNav()}>Dashboard</NavLink>,
     <NavLink key="1" to="/about" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" activeClassName='w3-white' onClick={ () => closeNav()}>About</NavLink>,
     <NavLink key="2" to="/tools" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" activeClassName='w3-white' onClick={ () => closeNav()}>Tools</NavLink>,
     <NavLink key="3" to="/references" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" activeClassName='w3-white' onClick={ () => closeNav()}>References</NavLink>,
@@ -91,7 +91,7 @@ const NotLoggedInLinks = [
 ];
 
 const LoggedInLinks2 = [
-    <NavLink key="0" to="/home" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Home</NavLink>,
+    <NavLink key="0" to="/dashboard" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Dashboard</NavLink>,
     <NavLink key="1" to="/about" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>About</NavLink>,
     <NavLink key="2" to="/tools" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>Tools</NavLink>,
     <NavLink key="3" to="/references" className="w3-bar-item w3-button w3-padding-large" onClick={ () => closeNav()}>References</NavLink>

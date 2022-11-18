@@ -67,18 +67,6 @@ const Weather = () => {
     return (
 
         <div>
-            <Navbar />
-
-            <div className='right-container'>
-                <Header headingText='Weather' />
-                
-                <Container className="d-flex justify-content-center">
-                    <ToolsDiv />
-                </Container>
-                
-                <Container className="d-flex justify-content-center"
-                    style={{ minHeight: "450px", paddingBottom: "25px" }}>
-                        
                     <Card>
                         <Card.Body>
 
@@ -116,10 +104,6 @@ const Weather = () => {
                             </div>
                         </Card.Body>
                     </Card>
-                </Container>
-
-                <Footer />
-            </div>
         </div>
     );
 };
