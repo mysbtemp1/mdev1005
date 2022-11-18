@@ -40,6 +40,9 @@ function Navbar () {
                 <div id="navDemo" className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large border">
                     { currentUser && LoggedInLinks2 }
                     { !currentUser && NotLoggedInLinks2 }
+                    { currentUser && 
+                        <span className="w3-bar-item w3-button w3-padding-large" onClick={handleLogout}>Logout</span>
+                    }
                 </div>
             </div>
         </div>
