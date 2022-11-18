@@ -211,7 +211,7 @@ button.logout:not(:hover)
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #f44336!important;
+  background-color: #f44336;
   overflow-x: hidden;
   padding-top: 20px;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
@@ -247,4 +247,34 @@ button.logout:not(:hover)
   {
     margin-left: 180px !important;
   }
+}
+
+
+.color-picker-toggle
+{
+  position: fixed;
+  right: -40px;
+  top: calc(50% - 10px);
+  z-index: 9000;
+  transform: rotate(-90deg);
+  background-color: #f44336;
+  padding: 10px 20px;
+  border: 1px solid red;
+}
+.color-picker-toggle:hover
+{
+  padding: 11px 21px;
+}
+.color-picker-custom
+{
+  position: fixed;
+  right: 0;
+  top: calc(50% - 250px);
+  z-index: 10000;
+}
+.d-none{
+  display: none;
+}
+.d-block{
+  display: block;
 }

@@ -12,31 +12,14 @@ const ColorPalette = () => {
     return (
 
         <div>  
-            <Navbar />
-
-            <div className='right-container'>
-                <Header headingText='Color Palette' />
-                
-                <Container className="d-flex justify-content-center">
-                    <ToolsDiv />
-                </Container>
-                
-                <Container className="d-flex justify-content-center"
-                    style={{ minHeight: "407px", paddingBottom: "25px" }}>
 
                     <Card>
                       <Card.Body>
                         <div>
-                        <ColorPicker width={456} height={228} color={color} onChange={setColor} hideHSV dark />
+                        <ColorPicker width={200} height={200} color={color} onChange={setColor} hideHSV dark />
                         </div>
                       </Card.Body>
                     </Card>
-
-                    
-                </Container>
-
-                <Footer />
-            </div>
         </div>
     );
 };

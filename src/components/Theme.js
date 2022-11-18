@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { ColorPicker, useColor } from "react-color-palette";
 import { NavLink } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext"
+import "react-color-palette/lib/css/styles.css";
+import { useState } from 'react';
 
 function Navbar () {
 
     const { currentUser, logout } = useAuth();
+    
+    const [color, setColor] = useColor("hex", "#f44336");
+    let [ colorBtnClass, setColorBtn ] = useState(['d-none']);
     // let history = useHistory();
 
     async function handleLogout() {
@@ -19,9 +25,26 @@ function Navbar () {
       }
     }
 
+    function openColorPalette() {
+        setColorBtn('d-block');
+    }
+
+    function closeColorPalette() {
+        setColorBtn('d-none');
+    }
+
     return (
         <div>
-            <div className="sidenav">
+            <div className={`color-picker-custom ${colorBtnClass}`}>
+                <div className='text-right mr-3 mb-1 font-24' onClick={closeColorPalette}>X</div>
+                <ColorPicker width={250} height={200} color={color} onChange={setColor} hideHSV dark />
+            </div>
+
+            <div className='color-picker-toggle' onClick={openColorPalette}>
+                Color Palette
+            </div>
+
+            <div className="sidenav" style={{backgroundColor : color.hex}}>
                 <div className="w3-padding-large">&nbsp;</div>
                 { currentUser && LoggedInLinks }
                 { !currentUser && NotLoggedInLinks }
@@ -29,7 +52,7 @@ function Navbar () {
             
             <div className="w3-top">
 
-                <div className="w3-bar w3-red w3-card w3-left-align w3-large">
+                <div className="w3-bar w3-red w3-card w3-left-align w3-large" style={{backgroundColor : color.hex}}>
                     <span variant="link" className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w-red" title="Toggle Navigation Menu" onClick={ () => openNav()}><i className="fa fa-bars"></i></span>
                     { currentUser ? [
                         <NavLink to="/update-profile" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">{currentUser.email}</NavLink>,
