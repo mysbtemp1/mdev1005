@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import  Header, { Footer, Navbar }  from '../Theme';
 
 const Home = () => {
+
     return (
         
         <div>

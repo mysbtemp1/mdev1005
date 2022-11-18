@@ -21,7 +21,7 @@ function Navbar () {
 
     return (
         <div>
-            <div class="sidenav">
+            <div className="sidenav">
                 <div className="w3-padding-large">&nbsp;</div>
                 { currentUser && LoggedInLinks }
                 { !currentUser && NotLoggedInLinks }
@@ -31,10 +31,13 @@ function Navbar () {
 
                 <div className="w3-bar w3-red w3-card w3-left-align w3-large">
                     <span variant="link" className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w-red" title="Toggle Navigation Menu" onClick={ () => openNav()}><i className="fa fa-bars"></i></span>
-                    <div className='w3-padding-large' style={{ display: "inline-block" }}>React Application</div>
-                    { currentUser && 
-                        <span className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white float-right" activeClassName='w3-white' onClick={handleLogout}>Log Out</span>
-                    }
+                    { currentUser ? [
+                        <NavLink to="/update-profile" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">{currentUser.email}</NavLink>,
+                        <span className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white float-right" activeClassName='w3-white' onClick={handleLogout}>Log Out</span>,
+                        // <span className='w3-padding-large float-right'>{currentUser.email}</span>
+                    ] : [
+                        <div className='w3-padding-large' style={{ display: "inline-block" }}>React Application</div>
+                    ]}
                 </div>
                 
                 <div id="navDemo" className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large border">
