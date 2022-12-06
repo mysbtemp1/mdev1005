@@ -260,16 +260,20 @@ button.logout:not(:hover)
   background-color: #f44336;
   padding: 10px 20px;
   border: 1px solid red;
+  color: white;
+  font-size: 15px;
 }
 .color-picker-toggle:hover
 {
+  right: -43px;
   padding: 11px 21px;
+  font-size: 16px;
 }
 .color-picker-custom
 {
   position: fixed;
-  right: 0;
-  top: calc(50% - 250px);
+  right: 20px;
+  top: calc(50% - 115px);
   z-index: 10000;
 }
 .d-none{
@@ -277,4 +281,9 @@ button.logout:not(:hover)
 }
 .d-block{
   display: block;
+}
+
+.color-picker-box
+{
+  border-radius: 10px;
 }

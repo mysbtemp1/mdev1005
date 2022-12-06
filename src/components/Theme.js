@@ -5,14 +5,15 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext"
 import "react-color-palette/lib/css/styles.css";
 import { useState } from 'react';
+import { themeFunc, globalState, globalStateContext } from '../contexts/AppContext';
+import { useContext } from 'react';
 
 function Navbar () {
 
     const { currentUser, logout } = useAuth();
     
-    const [color, setColor] = useColor("hex", "#f44336");
+    const [color, setColor] = useColor("hex", globalState.new_theme_color);
     let [ colorBtnClass, setColorBtn ] = useState(['d-none']);
-    // let history = useHistory();
 
     async function handleLogout() {
     //   setError("")
@@ -25,6 +26,11 @@ function Navbar () {
       }
     }
 
+    function setNewColor(any_color) {
+        setColor(any_color);
+        globalState.new_theme_color = any_color.hex;
+    }
+
     function openColorPalette() {
         setColorBtn('d-block');
     }
@@ -34,17 +40,31 @@ function Navbar () {
     }
 
     return (
+
+
         <div>
-            <div className={`color-picker-custom ${colorBtnClass}`}>
-                <div className='text-right mr-3 mb-1 font-24' onClick={closeColorPalette}>X</div>
-                <ColorPicker width={250} height={200} color={color} onChange={setColor} hideHSV dark />
-            </div>
+            {/* <AppContext.Provider value="sachin">
+                
+            </AppContext.Provider> */}
+            
+            { currentUser && 
+                <div>
+                    <div className={`color-picker-custom ${colorBtnClass}`}>
+                        <div className='text-right p-1 font-24' onClick={closeColorPalette}>X</div>
+                        <div className=' color-picker-box' style={{boxShadow: `0 0 10px 0 ${globalState.new_theme_color}, 0 0 10px 0 ${globalState.new_theme_color}`}}>
+                            {/* <AppContext.Consumer> */}
+                                <ColorPicker width={250} height={200} color={color} onChange={setNewColor} hideHSV hideHEX hideRGB dark/>
+                            {/* </AppContext.Consumer> */}
+                        </div>
+                    </div>
 
-            <div className='color-picker-toggle' onClick={openColorPalette}>
-                Color Palette
-            </div>
+                    <div className='color-picker-toggle' onClick={openColorPalette}>
+                        Color Palette
+                    </div>
+                </div>
+            }
 
-            <div className="sidenav" style={{backgroundColor : color.hex}}>
+            <div className="sidenav" style={{backgroundColor : globalState.new_theme_color}}>
                 <div className="w3-padding-large">&nbsp;</div>
                 { currentUser && LoggedInLinks }
                 { !currentUser && NotLoggedInLinks }
@@ -52,7 +72,7 @@ function Navbar () {
             
             <div className="w3-top">
 
-                <div className="w3-bar w3-red w3-card w3-left-align w3-large" style={{backgroundColor : color.hex}}>
+                <div className="w3-bar w3-red w3-card w3-left-align w3-large" style={{backgroundColor : globalState.new_theme_color}}>
                     <span variant="link" className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w-red" title="Toggle Navigation Menu" onClick={ () => openNav()}><i className="fa fa-bars"></i></span>
                     { currentUser ? [
                         <NavLink to="/update-profile" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">{currentUser.email}</NavLink>,
@@ -75,11 +95,11 @@ function Navbar () {
     );
 };
 
-const Header = ({headingText}) => {
+function Header ({headingText}) {
     return (
-        <HeaderDiv className="w3-container w3-red w3-center">
+        <div className="w3-container w3-red w3-center" style={{backgroundColor : globalState.new_theme_color, padding: '64px 16px 32px 16px'}}>
             <h1 className="w3-margin w3-jumbo">{headingText}</h1>
-        </HeaderDiv>
+        </div>
     );
 };
 
@@ -96,11 +116,9 @@ const Footer = () => {
 };
 
 export default Header;
+
 export { Footer, Navbar };
 
-const HeaderDiv = styled.header`
-    padding: 64px 16px 32px 16px;
-`
 const LoggedInLinks = [
     <NavLink key="0" to="/dashboard" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" activeClassName='w3-white' onClick={ () => closeNav()}>Dashboard</NavLink>,
     <NavLink key="1" to="/about" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" activeClassName='w3-white' onClick={ () => closeNav()}>About</NavLink>,

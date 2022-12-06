@@ -35,7 +35,6 @@ const ToolsDiv = () => {
                 <div className="w3-twothird">
                     <NavLink to="/tools/calculator" className="custom-btn mr-3" activeClassName='custom-btn-active'>Calculator</NavLink>
                     <NavLink to="/tools/calender" className="custom-btn mr-3" activeClassName='custom-btn-active'>Calender</NavLink>
-                    <NavLink to="/tools/color_palette" className="custom-btn" activeClassName='custom-btn-active'>Color&nbsp;Palette</NavLink>
                 </div>
             </div>
         </div>

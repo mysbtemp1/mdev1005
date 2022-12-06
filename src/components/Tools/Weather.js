@@ -82,17 +82,17 @@ const Weather = () => {
                                             <div className="top">
                                                 <p className="header">{data.name}</p>
                                             </div>
-                                            <div>
+                                            <div className="d-flex justify-content-between">
                                                 <div className="day" style={{display: "inline-block"}}>{moment().format('dddd')}, <span>{moment().format('LL')}</span></div>
                                                 <div className="description" style={{display: "inline-block"}}>{data.weather[0].main}</div>
                                             </div>
                                 
-                                            <div>
+                                            <div className="d-flex justify-content-between">
                                                 <p className="temp" style={{display: "inline-block"}}>Temprature: {data.main.temp} &deg;C</p>
                                                 <p className="temp" style={{display: "inline-block"}}>Humidity: {data.main.humidity} %</p>
                                             </div>
                                 
-                                            <div>
+                                            <div className="d-flex justify-content-between">
                                                 <p className="sunrise-sunset" style={{display: "inline-block"}}>Sunrise: {new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</p>
                                                 <p className="sunrise-sunset" style={{display: "inline-block"}}>Sunset: {new Date(data.sys.sunset * 1000).toLocaleTimeString('en-IN')}</p>
                                             </div>

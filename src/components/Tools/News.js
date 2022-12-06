@@ -9,11 +9,11 @@ const News = () => {
 
     useEffect(() => {
 
-        GetFinanceData();
+        GetNewsData();
 
     }, []);
 
-    async function GetFinanceData()
+    async function GetNewsData()
     {
         let url = '';
         let app_id = '5288d41806a24c749a16507428f14dd3';
